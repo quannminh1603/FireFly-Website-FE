@@ -1,4 +1,5 @@
 
+
 import './App.css';
 import ImageWithCaption from './ImageWithCaption/ImageWithCaption';
 import Navbar from './Navbar/navbar'
@@ -11,6 +12,7 @@ function App() {
     </div>
 
   );
+
 
 }
 
