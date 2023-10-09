@@ -1,5 +1,6 @@
 .conatiner{
   margin: 10px 200px;
+  /* min-height: 1000px; */
 }
 
 div {
@@ -45,6 +46,7 @@ a::after {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 a:hover::after {
@@ -55,12 +57,35 @@ a::after:hover {
   opacity: 1;
 }
 
-a::after:hover::before {
-  content: "chữ gì đây";
+.imgDungCu::after {
+  content: "Dụng cụ thể thao";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 20px;
+  padding-top: 100%;
+}
+
+.imgGiay::after {
+  content: "Giày thể thao";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  padding-top: 100%;
+}
+
+.imgQuanAo::after {
+  content: "Quần áo thể thao";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  padding-top: 100%;
 }
