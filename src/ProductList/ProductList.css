@@ -1,57 +1,99 @@
-.Productlist {
-    text-align: center;
-    margin-top: 20px;
+/* .Productlist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
   }
   
   .Productlist h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    float: right;
+  }
+  
+  .Productlist hr {
     position: relative;
-
-  }
-  
-  .Productlist h1::after {
-    content: "";
-    position: absolute;
-    left: 10px;
-    bottom: 345px;
-    width: 1517px;
+    top: -10px;
+    border: none;
     height: 1px;
-    background-color: #000;
-    margin-inline: -50px;
-  }
-  
-  .product-list {
+    background-color: black;
+    margin-bottom: 20px;
+    /* width: 100vw;
+    height: 2px;
+    background-color: black;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px; */
+.Productlist {
+    margin-bottom: 20px;
+}
+
+.Productlist h1 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.Productlist hr {
+    display: inline-block;
+    width: calc(100% - 10px);
+    height: 1px;
+    background-color: black;
+    margin-bottom: 20px;
+    width: 100vw;
+}
+
+.product-list {
     display: flex;
     justify-content: center;
-    margin: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .product-item {
-    text-align: center;
-    margin: 10px;
-    transition: transform 0.2s;
+    gap: 80px;
+    margin: 11px 201px;
+}
+
+.product-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .product-item:hover {
-    transform: scale(1.1);
-  }
-  
-  .product-item img {
+    text-align: center;
+}
+
+.product-item {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.product-image {
+    position: relative;
+}
+
+.product-image img {
     width: 300px;
     height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+}
 
-  }
-  
-  .product-item h3 {
-    margin-top: 10px;
-    font-size: 18px;
-  }
+.product-image:hover img {
+    opacity: 0.7;
+}
+
+.product-image .cart-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.cart-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-image:hover .cart-icon {
+    opacity: 0.7;
+}
