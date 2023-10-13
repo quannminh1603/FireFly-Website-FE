@@ -42,15 +42,6 @@ const Menu = () => {
                 <a className="nav-link" aria-current="page" href="#">
                   Cửa hàng
                 </a>
-
-                <div className="nav-link">
-                    <a href="#">Giày thể thao</a>
-                    <a href="#">Áo quần thể thao</a>
-                    <a href="#">Dịch vụ</a>
-                </div>
-
-                
-
               </li>
               <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="#">
