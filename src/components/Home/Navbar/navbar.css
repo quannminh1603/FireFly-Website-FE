@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  margin-top: 20px;
+  width: 100%;
+}
+.carousel-item {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.title h1 {
+  color: white;
+  font-size: 54px;
+}
+
+.title h3 {
+  color: white;
+  font-size: 40px;
+}
+
+.title button {
+  color: white;
+  font-size: 36px;
+  padding: 12px 4px;
+  position: relative;
+  background-color: black;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.list_item {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.list_item .item {
+  position: relative;
+  width: calc(100% / 3px);
+  text-align: center;
+  padding: 12px;
+}
+
+.list_item .item a img {
+  width: 423px;
+  height: 401px;
+}
+
+.list_item .item:hover .mod {
+  display: block;
+
+}
+
+.mod {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.6;
+  padding: 12px;
+  width: 423px;
+  height: 401px;
+  line-height: 401px;
+  cursor: pointer;
+}
+
+.mod p {
+  color: #fff;
+}

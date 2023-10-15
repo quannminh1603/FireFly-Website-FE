@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.category_product {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.containers {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.category_left {
+  /* flex: 1; */
+}
+
+.category_left .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.category_left .price {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.category_left .size {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.category_right {
+  /* flex: 2; */
+}

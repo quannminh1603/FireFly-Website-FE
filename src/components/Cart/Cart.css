@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.select_cart {
+  width: 85%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cart_left {
+}
+
+.cart_left h4 {
+  font-size: 24px;
+}
+
+.cart {
+  width: 880px;
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.infor_product {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.infor_product span {
+  font-size: 16px;
+}
+
+.input_quantity button {
+  border: none;
+  outline: none;
+  background: rgba(246, 246, 246, 1);
+  width: 50px;
+  height: 52px;
+  margin: 20px 0;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.cart_right {
+}
+
+.cart_right h4 {
+  font-size: 18px;
+}
+
+.cart_right .bill_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.cart_right .bill_detail .total_discount,
+.cart_right .bill_detail .total_cost {
+  margin: 20px 0;
+  font-size: 16px;
+}
+.cart_right .bill_detail .total_discount span,
+.cart_right .bill_detail .total_cost span {
+  font-size: 16px;
+}
