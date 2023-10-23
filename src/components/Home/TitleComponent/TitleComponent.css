@@ -26,6 +26,6 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  border-bottom: 2px solid #000;
+  /* border-bottom: 2px solid #000; */
   width: 100%;
 }

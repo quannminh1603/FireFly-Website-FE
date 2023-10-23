@@ -1,49 +1,78 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .select_cart {
-  width: 85%;
+  /* width: 85%;
   margin: 50px auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 70% auto;
+  gap: 24px;
+  margin-top: 160px;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 .cart_left {
 }
 
 .cart_left h4 {
   font-size: 24px;
+  margin-left: 2%;
 }
 
+
+
 .cart {
-  width: 880px;
+  /* width: 880px;
   margin: 20px 0;
   padding: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
-  background: rgba(0, 0, 0, 0.04);
+  gap: 10px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: #ffecdf;
+  display: grid;
+  grid-template-columns: 10% 40% auto auto auto;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cart_img img {
+  width: 100%;
+  /* display: block;
+  margin-right: auto;
+  margin-left: auto; */
+  height: 70px;
+  margin-top: 3%;
+  border-radius: 20px;
 }
 
 .infor_product {
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 
 .infor_product span {
   font-size: 16px;
+  float: left;
 }
 
 .input_quantity button {
   border: none;
   outline: none;
-  background: rgba(246, 246, 246, 1);
+  background: none;
   width: 50px;
   height: 52px;
   margin: 20px 0;
@@ -54,6 +83,7 @@
 }
 
 .cart_right {
+  margin-top: 48px;
 }
 
 .cart_right h4 {
@@ -70,8 +100,46 @@
 .cart_right .bill_detail .total_cost {
   margin: 20px 0;
   font-size: 16px;
+  width: 100%;
 }
 .cart_right .bill_detail .total_discount span,
 .cart_right .bill_detail .total_cost span {
   font-size: 16px;
+}
+
+
+.icon-delete path {
+  color: red;
+}
+
+.name {
+  color: #000;
+  font-weight: 400;
+}
+
+.total_right,
+.total_discount_right,
+.total_bill {
+  color: #000;
+}
+
+.bill_detail .total_cost span,
+.bill_detail .total_discount span {
+  float: right;
+  margin-top: -32px;
+}
+
+.total_bill {
+  float: right;
+  margin-top: 8px;
+}
+
+.btn_buy_detail_cart {
+  padding: 6px 12px;
+  text-align: center;
+  color: #fff;
+  background-color: #33988d;
+  margin-top: 20%;
+  width: 32%;
+  display: block;
 }

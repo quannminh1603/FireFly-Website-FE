@@ -27,17 +27,60 @@ const Menu = () => {
         </div>
         <div className="select_nav_mid">
           <ul className="select_menu">
-            <li>
-              <a href="/">Trang chủ</a>
+            <li className="listGiay">
+              <a href="/contact">Giày</a>
+              <div className="menuc2">
+                <div className="grid-3">
+                  <div>
+                    <ul>
+                      <li><a style={{fontWeight: "bold"}} href="/nikeproducts">Nike</a></li>
+                      {/* <li><a href="#">Adidas</a></li>
+                      <li><a href="#">MLB</a></li>
+                      <li><a href="#">Asic</a></li>
+                      <li><a href="#">Jordan</a></li>
+                      <li><a href="#">Reebok</a></li> */}
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li><a style={{fontWeight: "bold"}} href="/adidasproducts">Adidas</a></li>
+                      {/* <li><a href="#">Nike</a></li>
+                      <li><a href="#">MLB</a></li>
+                      <li><a href="#">Asic</a></li>
+                      <li><a href="#">Jordan</a></li>
+                      <li><a href="#">Reebok</a></li> */}
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li><a style={{fontWeight: "bold"}} href="/shoesproducts">Giày leo núi</a></li>
+                      {/* <li><a href="#">Adidas</a></li>
+                      <li><a href="#">MLB</a></li>
+                      <li><a href="#">Asic</a></li>
+                      <li><a href="#">Jordan</a></li>
+                      <li><a href="#">Reebok</a></li> */}
+                    </ul>
+                  </div>
+                  <div>
+                    <img src={logo} alt="" />
+                  </div>
+                </div>
+              </div>
             </li>
             <li>
-              <a href="/category">Bộ sưu tập</a>
+              <a href="/clothesproducts">Quần áo</a>
             </li>
             <li>
-              <a href="/contact">Cửa hàng</a>
+              <a href="/category">Môn thể thao</a>
             </li>
             <li>
-              <a href="/detail">Quần áo & phụ kiện</a>
+              <a href="/detail?id=1">Thương hiệu</a>
+            </li>
+            <li>
+              <a style={{color:"red", fontWeight: "bold"}} href="/detail">SALE</a>
+            </li>
+            <li>
+              <a style={{marginLeft: "200px"}} href="/detail">Về chúng tôi</a>
             </li>
           </ul>
         </div>
@@ -45,11 +88,13 @@ const Menu = () => {
           <div className="search">
             <SearchIcon
               style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
+                // position: "absolute",
+                // top: "10px",
+                // right: "10px",
                 color: "#3C3C43",
                 cursor: "pointer",
+                backgroundColor: "#fff",
+                fontSize: "1.4rem !important",
               }}
             />
             <input type="text" placeholder="Search" />

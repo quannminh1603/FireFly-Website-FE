@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/img/logo1.png";
+import logo from "../../assets/img/logo.jpg";
 import image from "../../assets/img/image.png";
 
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
@@ -17,7 +17,7 @@ const Footer = () => {
           title="Embedded Map"
           src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1697261287409!5m2!1svi!2s"
           width="300"
-          height="100"
+          height="200"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
@@ -27,7 +27,10 @@ const Footer = () => {
       <div className="footer_infor">
         <h3>Giới thiệu</h3>
         <p>
-          Giới thiệu về Fireflyfly Shop <br /> Thương hiệu
+          Giới thiệu về Fireflyfly Shop
+        </p>
+        <p style={{marginTop: "4px"}}>
+          Thương hiệu
         </p>
         <div className="list_icon">
           <div className="icon">

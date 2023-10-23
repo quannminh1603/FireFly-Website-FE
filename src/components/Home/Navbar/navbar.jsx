@@ -16,34 +16,37 @@ const navbar = () => {
           <button>Đến cửa hàng ngay</button>
         </div>
       </div>
-      <div className="container">
+      {/* <div className="container">
         <div className="list_item">
           <div className="item">
-            <a href="">
+            <a href="" className="dungcu">
               <img src={thumb1} alt="" />
-            </a>
-            <div className="mod">
+              
+            <div className="dungcu">
               <p>Giày thể thao</p>
             </div>
+            </a>
           </div>
           <div className="item">
-            <a href="">
+            <a href="" className="">
               <img src={thumb2} alt="" />
-            </a>
-            <div className="mod">
+              
+            <div className="giay">
               <p>Giày thể thao</p>
             </div>
+            </a>
           </div>
           <div className="item">
-            <a href="">
+            <a href="" className="">
               <img src={thumb3} alt="" />
-            </a>
-            <div className="mod">
+              
+            <div className="aoquan">
               <p>Giày thể thao</p>
             </div>
+            </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

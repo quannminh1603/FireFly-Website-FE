@@ -6,9 +6,9 @@ function IndexPage() {
   return (
     <>
       <div className="wrapper-content">
-        <Header />
+        {/* <Header /> */}
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
