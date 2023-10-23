@@ -9,11 +9,11 @@ import ListProduct from "../ListProduct/ListProduct";
 import { TextField, FormControl, Box } from "@mui/material";
 import Header from "../Header/Header";
 import DanhmucDetail from "./DanhmucDetail/DanhmucDetail";
-import nikeDetail1a from "../../assets/img/nikeDetail1a.jpg"
-import nikeDetail1b from "../../assets/img/nikeDetail1b.jpg"
-import nikeDetail1c from "../../assets/img/nikeDetail1c.jpg"
-import nikeDetail1d from "../../assets/img/nikeDetail1d.jpg"
-import nikeDetail1e from "../../assets/img/nikeDetail1e.jpg"
+import nikeDetail1a from "../../assets/img/nikeDetail1a.png"
+import nikeDetail1b from "../../assets/img/nikeDetail1b.png"
+import nikeDetail1c from "../../assets/img/nikeDetail1c.png"
+import nikeDetail1d from "../../assets/img/nikeDetail1d.png"
+import nikeDetail1e from "../../assets/img/nikeDetail1e.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faPaperPlane, faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import ListProductNike from "../Home/ListProductNike/ListProductNike";

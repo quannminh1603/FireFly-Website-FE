@@ -71,7 +71,7 @@ const Menu = () => {
               <a href="/clothesproducts">Quần áo</a>
             </li>
             <li>
-              <a href="/category">Môn thể thao</a>
+              <a href="/">Môn thể thao</a>
             </li>
             <li>
               <a href="/detail?id=1">Thương hiệu</a>
@@ -101,9 +101,6 @@ const Menu = () => {
           </div>
           <a href="/cart">
             <ShoppingCartOutlinedIcon className="icon" />
-          </a>
-          <a href="/">
-            <FavoriteBorderIcon className="icon" />
           </a>
           <a href="/login">
             <PersonOutlineOutlinedIcon className="icon" />
