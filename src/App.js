@@ -1,5 +1,8 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { useEffect } from "react";
+import axios from 'axios'
+// import process from "process";
 import IndexPage from "./Page/IndexPage";
 import CategoryProduct from "./components/CategoryProduct/CategoryProduct";
 import DetailProduct from "./components/DetailProduct/DetailProduct";
@@ -16,6 +19,15 @@ import ClothesProducts from "./components/Products/ClothesProducts/ClothesProduc
 import About from "./components/About/About";
 
 function App() {
+  useEffect(() => {
+    fetchApi()
+  }, [])
+  console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
+  const fetchApi = async () => {
+    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
+    console.log('res', res)
+  }
+
   return (
     <BrowserRouter>
       <Routes>
