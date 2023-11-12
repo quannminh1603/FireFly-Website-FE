@@ -6,6 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { motion } from 'framer-motion'
 import {
   faBars,
   faCartShopping,
@@ -17,6 +18,10 @@ const Menu = () => {
   const goToCategory = () => {
     window.location.href = "/category"; // Thay đổi địa chỉ URL đến /category
   };
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  }
   return (
     <div className="menu">
       <nav className="container">
@@ -80,7 +85,7 @@ const Menu = () => {
               <a style={{color:"red", fontWeight: "bold"}} href="/detail">SALE</a>
             </li>
             <li>
-              <a style={{marginLeft: "200px"}} href="/detail">Về chúng tôi</a>
+              <a style={{marginLeft: "200px"}} href="/about">Về chúng tôi</a>
             </li>
           </ul>
         </div>

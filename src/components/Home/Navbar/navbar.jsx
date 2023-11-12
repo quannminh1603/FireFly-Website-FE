@@ -1,11 +1,11 @@
 import React from "react";
 import banner from "../../../assets/img/baner.jpg";
-import "./navbar.css";
+import "./Navbar.css";
 
 import thumb1 from "../../../assets/img/anh1.jpg";
 import thumb2 from "../../../assets/img/anh2.jpg";
 import thumb3 from "../../../assets/img/anh3.jpg";
-const navbar = () => {
+const Navbar = () => {
   return (
     <div className="banner slide">
       <div className="carousel-item active">
@@ -51,4 +51,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

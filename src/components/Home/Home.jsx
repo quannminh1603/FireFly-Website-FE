@@ -1,6 +1,5 @@
 import React from "react";
 import Menu from "../Header/menu/Menu";
-import Nav from "./Navbar/navbar";
 import ListProduct from "../ListProduct/ListProduct";
 import ListProductNew from "./ListProductNew/ListProductNew";
 import Topic from "./Topic/Topic";
@@ -13,11 +12,14 @@ import ListProductAdidas from "./ListProductAdidas/ListProductAdidas,";
 import ListProductClothes from "./ListProductClothes/ListProductClothes";
 import ListDanhmuc from "./ListDanhmuc/ListDanhmuc";
 import Footer from "../Footer/Footer"
+import Navbar from "./Navbar/Navbar";
+// import { Counter } from "../../redux/slice/Counter";
 const Home = () => {
   return (
     <>
+      {/* <Counter /> */}
       <Header />
-      <Nav />
+      <Navbar/>
       <AboutHome />
       <TitleComponent title="Sản Phẩm Mới" />
       <ListProductNew />
