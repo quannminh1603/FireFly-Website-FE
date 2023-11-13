@@ -1,147 +1,159 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import img from "../../assets/img/RightSide.png";
+import React from "react";
+import { useState } from "react";
+import { Button, Checkbox, Form, Input, Email } from 'antd';
 
-function Register() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get("name"),
-      username: data.get("username"),
-      phone: data.get("phone"),
-      email: data.get("email"),
-      address: data.get("address"),
-      password: data.get("password"),
-    });
-  };
+const Register = (props) => {
+    const onFinish = (values) => {
+        console.log('Success:', values);
+    };
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
 
-  return (
-    <ThemeProvider theme={createTheme()}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: `url(${img})`,
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign up
-            </Typography>
-            <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
+    const [email, setEmail] = useState('222')
+
+    const handleOnchangeEmail = () => {
+
+    }
+
+    // const handleOnchangeInput = (e) => {
+    //     props.handleOnchange(e.target.value)
+    // }
+
+    // const handleOnchangeEmail = (value) => {
+    //     setEmail(value)
+    // }
+    return (
+        <>
+            {/* <div className="loginPage">
+                <h1>XIN CHÀO</h1>
+                <h4>Chào mừng bạn đã trở lại</h4>
+
+            </div> */}
+            <Form
+                name="basic"
+                labelCol={{
+                    span: 8,
+                }}
+                wrapperCol={{
+                    span: 16,
+                }}
+                style={{
+                    maxWidth: 600,
+                }}
+                initialValues={{
+                    remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
             >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Họ và tên"
-                name="name"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                label="Tên đăng nhập"
-                name="username"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="phone"
-                label="Số điện thoại"
-                name="phone"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="address"
-                label="Địa chỉ"
-                name="address"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-              />
+                <Form.Item
+                    label="Họ và tên"
+                    name="hoTenKH"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền họ và tên!',
+                        },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+                <Form.Item
+                    label="Tên đăng nhập"
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền tên đăng nhập!',
+                        },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign Up
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="/login" variant="body2">
-                    Already have an account? Sign In
-                  </Link>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
-  );
+                <Form.Item
+                    label="Số điện thoai"
+                    name="sdt"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền số điện thoại!',
+                        },
+                    ]}
+                >
+                    <Input type="number" />
+                </Form.Item>
+
+                <Form.Item
+                    label="Email"
+                    name="email"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền mật khẩu!',
+                        },
+                    ]}
+                >
+                    <Input type="email" placeholder="Email" value={email} handleOnchange = {handleOnchangeEmail}/>
+                </Form.Item>
+                
+                <Form.Item
+                    label="Địa chỉ"
+                    name="diaChi"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền địa chỉ!',
+                        },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+
+                <Form.Item
+                    label="Mật khẩu"
+                    name="password"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng điền mật khẩu!',
+                        },
+                    ]}
+                >
+                    <Input.Password />
+                </Form.Item>
+
+                
+
+                {/* <Form.Item
+                    name="remember"
+                    valuePropName="checked"
+                    wrapperCol={{
+                        offset: 8,
+                        span: 16,
+                    }}
+                >
+                    <Checkbox>Remember me</Checkbox>
+                </Form.Item> */}
+
+                <Form.Item
+                    wrapperCol={{
+                        offset: 8,
+                        span: 16,
+                    }}
+                >
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                    <Button htmlType="reset">
+          Reset
+        </Button>
+                </Form.Item>
+            </Form>
+        </>
+    )
 }
 
 export default Register;

@@ -2,11 +2,12 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
 // import process from "process";
 import IndexPage from "./Page/IndexPage";
 import CategoryProduct from "./components/CategoryProduct/CategoryProduct";
 import DetailProduct from "./components/DetailProduct/DetailProduct";
-import Login from "./Page/Login/Login";
+import Login from "./Page/Login/Login"
 import Register from "./Page/Register/Register";
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
@@ -19,14 +20,17 @@ import ClothesProducts from "./components/Products/ClothesProducts/ClothesProduc
 import About from "./components/About/About";
 
 function App() {
-  useEffect(() => {
-    fetchApi()
-  }, [])
+  // useEffect(() => {
+  //   fetchApi()
+  // }, [])
   console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
   const fetchApi = async () => {
     const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
-    console.log('res', res)
+    // console.log('res', res)
+    return res.data
   }
+  const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
+  console.log('query', query)
 
   return (
     <BrowserRouter>
