@@ -1,8 +1,5 @@
 import React from "react";
-import Menu from "../Header/menu/Menu";
-import ListProduct from "../ListProduct/ListProduct";
 import ListProductNew from "./ListProductNew/ListProductNew";
-import Topic from "./Topic/Topic";
 import TitleComponent from "./TitleComponent/TitleComponent";
 import Header from "../Header/Header";
 import AboutHome from "./AboutHome/AboutHome";
@@ -13,19 +10,14 @@ import ListProductClothes from "./ListProductClothes/ListProductClothes";
 import ListDanhmuc from "./ListDanhmuc/ListDanhmuc";
 import Footer from "../Footer/Footer"
 import Navbar from "./Navbar/Navbar";
-import LoadingComponent from "../LoadingComponent/LoadingComponent";
-// import { Counter } from "../../redux/slice/Counter";
-const Home = (isLoading) => {
+const Home = () => {
   return (
     <>
-      {/* <Counter /> */}
       <Header />
       <Navbar/>
       <AboutHome />
-    {/* <LoadingComponent isLoading={isLoading}> */}
       <TitleComponent title="Sản Phẩm Mới" />
       <ListProductNew />
-    {/* </LoadingComponent> */}
       <TitleComponent title="Giày Nike" />
       <ListProductNike />
       <SubBanner />
@@ -33,7 +25,7 @@ const Home = (isLoading) => {
       <ListProductAdidas />
       <TitleComponent title="Áo quần thể thao" />
       <ListProductClothes />
-      <TitleComponent title="Mua theo danh mục" />
+      {/* <TitleComponent title="Mua theo danh mục" /> */}
       <ListDanhmuc />
       {/* <Topic /> */}
       {/* <ListProduct /> */}
