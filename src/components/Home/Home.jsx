@@ -13,16 +13,19 @@ import ListProductClothes from "./ListProductClothes/ListProductClothes";
 import ListDanhmuc from "./ListDanhmuc/ListDanhmuc";
 import Footer from "../Footer/Footer"
 import Navbar from "./Navbar/Navbar";
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
 // import { Counter } from "../../redux/slice/Counter";
-const Home = () => {
+const Home = (isLoading) => {
   return (
     <>
       {/* <Counter /> */}
       <Header />
       <Navbar/>
       <AboutHome />
+    {/* <LoadingComponent isLoading={isLoading}> */}
       <TitleComponent title="Sản Phẩm Mới" />
       <ListProductNew />
+    {/* </LoadingComponent> */}
       <TitleComponent title="Giày Nike" />
       <ListProductNike />
       <SubBanner />
@@ -37,6 +40,7 @@ const Home = () => {
       {/* <Topic isShowInverted /> */}
       {/* <ListProduct isShowPanigation /> */}
       <Footer />
+      
     </>
   );
 };

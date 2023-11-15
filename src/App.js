@@ -23,14 +23,14 @@ function App() {
   // useEffect(() => {
   //   fetchApi()
   // }, [])
-  console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
-  const fetchApi = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
-    // console.log('res', res)
-    return res.data
-  }
-  const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
-  console.log('query', query)
+  // console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
+  // const fetchApi = async () => {
+  //   const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
+  //   // console.log('res', res)
+  //   return res.data
+  // }
+  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
+  // console.log('query', query)
 
   return (
     <BrowserRouter>

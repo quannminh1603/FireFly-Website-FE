@@ -1,6 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Checkbox, Form, Input, Email } from 'antd';
+import InputForm from "../InputForm/InputForm";
+import * as UserService from "../../services/UserService"
+import { useMutationHook } from "../../hooks/useMutationHook";
+import * as message from "../../components/Message/Message"
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = (props) => {
     const onFinish = (values) => {
@@ -10,10 +15,74 @@ const Register = (props) => {
         console.log('Failed:', errorInfo);
     };
 
-    const [email, setEmail] = useState('222')
+    const navigate = useNavigate();
 
-    const handleOnchangeEmail = () => {
+    const mutation = useMutationHook(
+        data => UserService.registerUser(data)
+    )
+    const { data, isLoading, isSuccess, isError} = mutation
+    console.log('mutation', mutation)
 
+    useEffect(() => {
+        if(isSuccess) {
+            message.success()
+            // handleNavigateLogin()
+        }else if(isError) {
+            message.error()
+        }
+    }, [isSuccess, isError])
+
+    const handleNavigateLogin = () => {
+        navigate('/login')
+    }
+
+    const [hoTenKH, setHoTenKH] = useState('');
+    const [username, setUsername] = useState('');
+    const [sdt, setSdt] = useState('');
+    const [email, setEmail] = useState('')
+    const [diaChi, setDiaChi] = useState('')
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    
+    const handleOnchangeHoTenKH = (value) => {
+        setHoTenKH(value)
+    }
+
+    const handleOnchangeUsername = (value) => {
+        setUsername(value)
+    }
+
+    const handleOnchangeSdt = (value) => {
+        setSdt(value)
+    }
+
+    const handleOnchangeEmail = (value) => {
+        setEmail(value)
+    }
+
+    const handleOnchangeDiaChi = (value) => {
+        setDiaChi(value)
+    }
+
+    const handleOnchangePassword = (value) => {
+        setPassword(value)
+    }
+
+    const handleOnchangeConfirmPassword = (value) => {
+        setConfirmPassword(value)
+    }
+
+    const handleRegister = () => {
+        mutation.mutate({
+            hoTenKH,
+            username,
+            sdt,
+            email,
+            diaChi,
+            password,
+            confirmPassword
+        })
+        console.log('Register', hoTenKH, username, sdt, email, diaChi, password, confirmPassword)
     }
 
     // const handleOnchangeInput = (e) => {
@@ -31,6 +100,7 @@ const Register = (props) => {
 
             </div> */}
             <Form
+                className="formRegister"
                 name="basic"
                 labelCol={{
                     span: 8,
@@ -48,7 +118,14 @@ const Register = (props) => {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
-                <Form.Item
+                <InputForm placeholder="Họ và tên" value={hoTenKH} onChange={handleOnchangeHoTenKH} />
+                <InputForm placeholder="Tên đăng nhập" value={username} onChange={handleOnchangeUsername} />
+                <InputForm placeholder="Số điện thoại" value={sdt} onChange={handleOnchangeSdt} />
+                <InputForm placeholder="Email" value={email} onChange={handleOnchangeEmail} />
+                <InputForm placeholder="Địa chỉ" value={diaChi} onChange={handleOnchangeDiaChi} />
+                <InputForm placeholder="Mật khẩu" value={password} onChange={handleOnchangePassword} />
+                <InputForm placeholder="Xác nhận mật khẩu" value={confirmPassword} onChange={handleOnchangeConfirmPassword} />
+                {/* <Form.Item
                     label="Họ và tên"
                     name="hoTenKH"
                     rules={[
@@ -123,7 +200,7 @@ const Register = (props) => {
                     ]}
                 >
                     <Input.Password />
-                </Form.Item>
+                </Form.Item> */}
 
                 
 
@@ -137,19 +214,19 @@ const Register = (props) => {
                 >
                     <Checkbox>Remember me</Checkbox>
                 </Form.Item> */}
-
+                {data?.status === "ERR" && <span style={{color: "red"}}>{data?.message}</span>}
                 <Form.Item
                     wrapperCol={{
                         offset: 8,
                         span: 16,
                     }}
                 >
-                    <Button type="primary" htmlType="submit">
+                    <Button className="btnRegister" type="primary" htmlType="submit" onClick={handleRegister} >
                         Submit
                     </Button>
-                    <Button htmlType="reset">
-          Reset
-        </Button>
+                    <Button className="btnRegister" type="primary" htmlType="submit" onClick={handleNavigateLogin} >
+                        Login
+                    </Button>
                 </Form.Item>
             </Form>
         </>
