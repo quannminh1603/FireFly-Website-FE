@@ -18,41 +18,49 @@ import NikeProducts from "./components/Products/NikeProducts/NikeProducts";
 import ShoesProducts from "./components/Products/ShoesProducts/ShoesProducts";
 import ClothesProducts from "./components/Products/ClothesProducts/ClothesProducts";
 import About from "./components/About/About";
+import HomeAdmin from "./Page/Admin/Home/home";
+import CategoryDetail from "./Page/Admin/Category/Detail/CategoryDetail";
+import CategoryList from "./Page/Admin/Category/CategoryList";
 
 function App() {
   // useEffect(() => {
   //   fetchApi()
   // }, [])
-  // console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
-  // const fetchApi = async () => {
-  //   const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
-  //   // console.log('res', res)
-  //   return res.data
-  // }
-  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
-  // console.log('query', query)
+  console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY)
+  const fetchApi = async () => {
+    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/getAll-product`)
+    // console.log('res', res)
+    return res.data
+  }
+  const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
+  console.log('query', query)
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<IndexPage />}>
-          <Route path="/category" element={<CategoryProduct />}></Route>
-          <Route path="/detail" element={<DetailProduct />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/newproducts" element={<NewProducts />}></Route>
-          <Route path="/adidasproducts" element={<AdidasProducts />}></Route>
-          <Route path="/nikeproducts" element={<NikeProducts />}></Route>
-          <Route path="/shoesproducts" element={<ShoesProducts />}></Route>
-          <Route path="/clothesproducts" element={<ClothesProducts />}></Route>
-          <Route path="/about" element={<About />}></Route>
-        </Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<IndexPage/>}>
+                    <Route path="/category" element={<CategoryProduct/>}></Route>
+                    <Route path="/detail" element={<DetailProduct/>}></Route>
+                    <Route path="/cart" element={<Cart/>}></Route>
+                    <Route path="/contact" element={<Contact/>}></Route>
+                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/newproducts" element={<NewProducts/>}></Route>
+                    <Route path="/adidasproducts" element={<AdidasProducts/>}></Route>
+                    <Route path="/nikeproducts" element={<NikeProducts/>}></Route>
+                    <Route path="/shoesproducts" element={<ShoesProducts/>}></Route>
+                    <Route path="/clothesproducts" element={<ClothesProducts/>}></Route>
+                    <Route path="/about" element={<About/>}></Route>
+                </Route>
+                <Route>
+                    <Route path="/admin/category" element={<CategoryList/>}></Route>
+                    <Route path="/admin/category/new" element={<CategoryDetail/>}></Route>
+                    <Route path="/admin/category/:id" element={<CategoryDetail/>}></Route>
+                </Route>
+                <Route path="/login" element={<Login/>}></Route>
+                <Route path="/register" element={<Register/>}></Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

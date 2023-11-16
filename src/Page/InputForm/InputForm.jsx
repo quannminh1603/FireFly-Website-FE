@@ -1,16 +1,23 @@
+// InputForm.js
 import { Input } from "antd";
-import React, { useState } from "react";
+import React from "react";
 import { WrapperInputStyle } from "./style";
 
 const InputForm = (props) => {
-    const {placeholder = 'nhập text', ...rests} = props;
-    console.log('props', props)
-    const handleOnchangeInput = (e) => {
-        props.onChange(e.target.value)
-    }
+    const { placeholder = 'Nhập text', onChange, value, ...rests } = props;
+
+    const handleOnChange = (e) => {
+        onChange(e.target.value);
+    };
+
     return (
-        <WrapperInputStyle placeholder={placeholder} value={props.value} {...rests} onChange={handleOnchangeInput}/>
-    )
+        <WrapperInputStyle
+            placeholder={placeholder}
+            value={value}
+            onChange={handleOnChange}
+            {...rests}
+        />
+    );
 }
 
 export default InputForm;

@@ -9,7 +9,7 @@ import ListProductAdidas from "./ListProductAdidas/ListProductAdidas,";
 import ListProductClothes from "./ListProductClothes/ListProductClothes";
 import ListDanhmuc from "./ListDanhmuc/ListDanhmuc";
 import Footer from "../Footer/Footer"
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar/navbar";
 const Home = () => {
   return (
     <>
