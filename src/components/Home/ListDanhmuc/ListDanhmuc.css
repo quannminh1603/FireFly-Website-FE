@@ -5,7 +5,12 @@
 }
 
 .list_danhmuc {
+<<<<<<< HEAD
   margin-right: 15.2%;
+=======
+    margin-right: 15.2%;
+    margin-top: 200px;
+>>>>>>> 987cd551d057dad780f533808f5112faf5311126
 }
 
 .list_danhmuc .grid-2 {

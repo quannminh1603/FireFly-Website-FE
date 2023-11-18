@@ -9,6 +9,7 @@
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -48,8 +49,6 @@ input {
   margin-left: -52px;
 }
 
-.select_nav_mid {
-}
 
 .select_nav_mid .select_menu {
   display: flex;
@@ -130,11 +129,14 @@ input {
   grid-template-columns: auto auto auto auto;
 }
 
+<<<<<<< HEAD
 .meunc2 .grid-3 div img {
   /* display: block; */
   /* margin-top: 40px; */
 }
 
+=======
+>>>>>>> 987cd551d057dad780f533808f5112faf5311126
 .icon {
   font-weight: 100;
   font-size: 1.3rem !important;

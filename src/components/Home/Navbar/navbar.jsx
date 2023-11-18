@@ -1,6 +1,6 @@
 import React from "react";
 import banner from "../../../assets/img/baner.jpg";
-import "./Navbar.css";
+import "./navbar.css";
 
 import thumb1 from "../../../assets/img/anh1.jpg";
 import thumb2 from "../../../assets/img/anh2.jpg";

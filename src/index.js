@@ -22,7 +22,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
   // </React.StrictMode>

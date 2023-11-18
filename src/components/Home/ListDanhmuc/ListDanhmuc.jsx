@@ -34,10 +34,10 @@ const ListDanhmuc = () => {
                 </div>
             </div>
                 <h3>LOOKS GOOD. RUNS GOOD. FEELS GOOD.</h3>
-            <div className="register_home">
+            {/* <div className="register_home">
                 <h4>Đăng kí thành viên để được ưu đãi 15% tại Firefly</h4>
                 <a>Đăng kí miễn phí</a>
-            </div>
+            </div> */}
             <div className="danhsach">
                 <div className="col-4">
                     <h1>Giày</h1>

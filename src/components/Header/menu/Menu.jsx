@@ -17,6 +17,8 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import UserComponent from "./UserComponent/UserComponent";
 const Menu = () => {
   const goToCategory = () => {
     window.location.href = "/category"; // Thay đổi địa chỉ URL đến /category
@@ -49,7 +51,7 @@ const Menu = () => {
         <div className="select_nav_mid">
           <ul className="select_menu">
             <li className="listGiay">
-              <a href="/contact">Giày</a>
+              <a href="/contact">Sản phẩm</a>
               <div className="menuc2">
                 <div className="grid-3">
                   <div>
@@ -142,9 +144,7 @@ const Menu = () => {
           <a href="/cart">
             <ShoppingCartOutlinedIcon className="icon" />
           </a>
-          <a href="/login">
-            <PersonOutlineOutlinedIcon className="icon" />
-          </a>
+          <UserComponent />
         </div>
       </nav>
       {/* Mobile */}

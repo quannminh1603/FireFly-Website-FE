@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Button, Checkbox, Form, Input } from 'antd';
 import InputForm from "../InputForm/InputForm";
+import * as UserService from "../../services/UserService"
+import { useMutationHook } from "../../hooks/useMutationHook";
+import LoadingComponent from "../../components/LoadingComponent/LoadingComponent";
+import { Navigate, useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { useDispatch, useSelector } from "react-redux"
+import { updateUser } from "../../redux/slice/userSlide";
+import Header from "../../../src/components/Header/Header";
+
 
 const Login = () => {
+    const navigate = useNavigate();
+    
+    const user  = useSelector((state) => state.user)
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -10,89 +22,72 @@ const Login = () => {
         console.log('Failed:', errorInfo);
     };
 
-    const [email, setEmail] = useState('2222');
+    const mutation = useMutationHook(
+        data => UserService.loginUser(data)
+    )
+    const dispatch = useDispatch();
+    const { data, isLoading, isSuccess, isError } = mutation
+    console.log('mutation', mutation)
 
-    const hangdleOnchangeEmail = () => {
-        
+    useEffect(() => {
+        if(isSuccess) {
+            localStorage.setItem('access_token', data?.access_token)
+            if(data?.access_token) {
+                const decoded = jwtDecode(data?.access_token)
+                console.log('decoded', decoded)
+                if(decoded?.id) {
+                    handleGetDetailsUser(decoded?.id, data?.access_token)
+                }
+            }
+        }
+    }, [isSuccess])
+
+    const handleGetDetailsUser = async (id, token) => {
+        const res = await UserService.getDetailsUser(id, token)
+        dispatch(updateUser({ ...res?.data, access_token: token }))
+        console.log('res', res)
+    }
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleOnchangeUsername = (value) => {
+        setUsername(value)
+    }
+
+    const handleOnchangePassword = (value) => {
+        setPassword(value)
+    }
+
+    const handleNavigateLogin = () => {
+        navigate('/')
+    }
+
+    const handleLogin = () => {
+        // handleNavigateLogin()
+        mutation.mutate({
+            username,
+            password
+        })
+        console.log('Login', username, password)
     }
 
     return (
         <>
-            <InputForm placeholder="Email" value={email} hangdleOnchange={hangdleOnchangeEmail} />
-            {/* <div className="loginPage">
-                <h1>XIN CHÀO</h1>
-                <h4>Chào mừng bạn đã trở lại</h4>
-
-            </div> */}
-            {/* <Form
-                name="basic"
-                labelCol={{
-                    span: 8,
-                }}
-                wrapperCol={{
-                    span: 16,
-                }}
-                style={{
-                    maxWidth: 600,
-                }}
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-            >
-                <Form.Item
-                    label="Username"
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Vui lòng điền tên đăng nhập!',
-                        },
-                    ]}
+        <br /><br /><br /><br /><br />
+        <Header/>
+            <InputForm placeholder="Tên đăng nhập" name={username} value={username} onChange={handleOnchangeUsername} />
+            <InputForm placeholder="Password" name={password} value={password} onChange={handleOnchangePassword} />
+            {data?.status === "ERR" && <span style={{color: "red"}}>{data?.message}</span>}
+            {/* <LoadingComponent isLoading={isLoading}> */}
+            <br></br>
+                <Button
+                    onClick={handleLogin}
                 >
-                    <Input />
-                </Form.Item>
-
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Vui lòng điền mật khẩu!',
-                        },
-                    ]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-                <Form.Item
-                    name="remember"
-                    valuePropName="checked"
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                    <Button htmlType="reset">
-          Reset
-        </Button>
-                </Form.Item>
-            </Form> */}
+                    Đăng nhập
+                </Button>
+            {/* </LoadingComponent> */}
+            
         </>
     )
 }
