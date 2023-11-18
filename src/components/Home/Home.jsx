@@ -32,10 +32,10 @@ const Home = () => {
       <ListProductClothes />
       <TitleComponent title="Mua theo danh mục" />
       <ListDanhmuc />
-      {/* <Topic /> */}
-      {/* <ListProduct /> */}
-      {/* <Topic isShowInverted /> */}
-      {/* <ListProduct isShowPanigation /> */}
+      <Topic />
+      <ListProduct />
+      <Topic isShowInverted />
+      <ListProduct isShowPanigation />
       <Footer />
     </>
   );

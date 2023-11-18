@@ -167,3 +167,45 @@
   padding-top: 50%;
 
 }
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .banner {
+    margin-top: 66px;
+    width: 100%;
+  }
+  .title {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+  }
+  
+  .title h1 {
+    color: white;
+    font-size:18px;
+  }
+  
+  .title h3 {
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    margin: 12px 0;
+  }
+  
+  .title button {
+    color: white;
+    padding: 10px 12px;
+    position: relative;
+    background-color: black;
+    opacity: 0.8;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  
+}

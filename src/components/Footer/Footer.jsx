@@ -8,8 +8,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footer_logo">
+    <div className="footer flex">
+      <div className="footer_logo ">
         <div className="logo_img">
           <img src={logo} alt="" />
         </div>
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
         <img src={image} alt="" />
       </div>
-      <div className="footer_policies">
+      <div className="footer_policies ">
         <h3>Các chính sách</h3>
         <ul>
           <li>Bảo mật thông tin cá nhân</li>
@@ -70,7 +70,7 @@ const Footer = () => {
           <li>Chính sách bảo hành</li>
         </ul>
       </div>
-      <div className="footer_address">
+      <div className="footer_address ">
         <h3>HỒ CHÍ MINH</h3>
         <p>
           Lô 8, Tô Ký, Công viên phần mềm Quang Trung, Quận 12, Tp.Hồ Chí Minh

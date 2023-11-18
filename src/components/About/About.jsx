@@ -7,7 +7,7 @@ import nikeDetail1b from "../../assets/img/nikeDetail1b.png"
 import aboutDetail1 from "../../assets/img/aboutDetail1.jpg"
 import aboutDetail2 from "../../assets/img/aboutDetail2.jpg"
 import Footer from "../Footer/Footer";
-
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 const About = () => {
     return (
         <>
@@ -53,10 +53,10 @@ const About = () => {
                     </div>
                     <div className="about-contact">
                         <div className="col-2"></div>
-                        <div className="col-2 mt40px">
+                        <div className="col-2">
                                 {/* <h1>Chào mừng bạn đến với Firefly shop</h1> */}
                                 {/* <p className="content">Cửa hàng Firefly chúng tôi chuyên bán đồ thể thao được thành lập năm 2023 với tiêu chí “Looks Good.Runs Good.Feels Good. ” Chúng tôi mong khách hàng luôn có trải nghiệm tốt nhất tại cửa hàng của chúng tôi. Chúc khách hàng có 1 ngày mua sắm tuyệt vời tại cửa hàng Firefly, Trân trọng cảm ơn!</p> */}
-                                <FontAwesomeIcon className="phoneIcon" icon={faPhone} />
+                                <LocalPhoneIcon className="phoneIcon" />
                                 <p className="phone"><b>0366259312</b><br></br><p className="contentPhone">Liên hệ với chúng tôi nếu bạn gặp vấn đề khi mua sắm tại cửa hàng Firefly.</p></p><br/><br/>
                                 <a href="/">Đến cửa hàng</a>
                         </div>

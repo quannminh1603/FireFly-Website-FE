@@ -29,3 +29,30 @@
   /* border-bottom: 2px solid #000; */
   width: 100%;
 }
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .title_list_new {
+    width: 95%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .title_list_new h2 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+  }
+
+  .title_list_new h2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* border-bottom: 2px solid #000; */
+    width: 100%;
+  }
+}

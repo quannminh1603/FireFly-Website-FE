@@ -29,11 +29,11 @@ li {
 
 .footer {
   width: 100%;
-  background: #2C2C2C;
+  background: #2c2c2c;
   display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 24px;
+  padding: 50px !important;
   padding-top: 50px;
   padding-bottom: 24px;
   gap: 80px;
@@ -74,6 +74,7 @@ li {
   margin-left: 20px;
 }
 iframe {
+  display: none;
   margin-top: -20px;
 }
 
@@ -92,4 +93,51 @@ iframe {
 
 .footer .footer_infor img {
   width: 70%;
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .footer {
+    width: 100%;
+    background: #2c2c2c;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    padding: 12px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    margin-top: 10px;
+    gap: 2px;
+  }
+  .footer_logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .footer_infor .list_icon {
+    margin: 4px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2px;
+  }
+  .logo_img {
+    width: 100%;
+  }
+  .logo_img img {
+    width: 87%;
+  }
+  .footer h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left;
+    margin: 20px 0;
+  }
+  .footer .footer_infor p,
+  .footer .footer_policies ul li,
+  .footer .footer_address p {
+    font-size: 14px;
+  }
 }

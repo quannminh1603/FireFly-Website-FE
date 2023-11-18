@@ -22,3 +22,9 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .list_product {
+    display: none;
+  }
+}
